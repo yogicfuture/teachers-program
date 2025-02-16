@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Teachers Program - Coming Soon</title>
+</head>
+
+<body class="bg-white min-h-screen">
+    <!-- Responsive Header -->
+    <header class="bg-white shadow-sm">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="#" class="flex-shrink-0">
+                    <img src="yogiclogo2.png" alt="Logo" class="h-8 md:h-10">
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-gray-600 text-xl"></i>
+                </button>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <ul class="flex space-x-6">
+                        <li><a href="https://yogicfuture.com/features/" class="text-gray-600 hover:text-gray-900">Features</a></li>
+                        <li><a href="https://yogicfuture.com/pricing/" class="text-gray-600 hover:text-gray-900">Pricing</a></li>
+
+                         <!-- Project Dropdown -->
+        <li class="relative group">
+            <button class="text-gray-600 hover:text-gray-900 flex items-center">
+                Project
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+            </button>
+            <div class="absolute left-0 mt-2 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200">
+                <ul class="w-48 bg-white border border-gray-200 rounded-md shadow-lg py-2">
+                    <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Partner Program</a></li>
+                    <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Student Program</a></li>
+                </ul>
+            </div>
+        </li>
+        
+        <!-- Volunteer Dropdown -->
+        <li class="relative group">
+            <button class="text-gray-600 hover:text-gray-900 flex items-center">
+                Volunteer
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+            </button>
+            <div class="absolute left-0 mt-2 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200">
+                <ul class="w-64 bg-white border border-gray-200 rounded-md shadow-lg py-2">
+                    <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Gofundme campaign teachers</a></li>
+                    <li><a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Gofundme campaign students</a></li>
+                </ul>
+            </div>
+        </li>
+                    </ul>
+                    <div class="flex items-center space-x-4">
+                        <a href="https://yoga-admin-console.righttasker.com.au/auth/login" class="text-gray-600 hover:text-black font-bold">Log in</a>
+                        <a href="https://yoga-admin-console.righttasker.com.au/auth/login" class="bg-black text-white px-4 py-2 rounded-full font-bold hover:bg-[#ff933b] transition-colors">Sign up</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobileMenu" class="hidden md:hidden mt-4">
+                <ul class="space-y-4">
+                    <li><a href="https://yogicfuture.com/features/" class="block text-gray-600 hover:text-gray-900">Features</a></li>
+                    <li><a href="https://yogicfuture.com/pricing/" class="block text-gray-600 hover:text-gray-900">Pricing</a></li>
+                    <!-- Mobile Project Submenu -->
+                <li>
+                    <button onclick="toggleSubmenu('projectSubmenu')" class="flex items-center justify-between w-full text-gray-600 hover:text-gray-900">
+                        Project
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <ul id="projectSubmenu" class="hidden pl-4 mt-2 space-y-2">
+                        <li><a href="#" class="block text-gray-600 hover:text-gray-900">Partner Program</a></li>
+                        <li><a href="#" class="block text-gray-600 hover:text-gray-900">Student Program</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Mobile Volunteer Submenu -->
+                <li>
+                    <button onclick="toggleSubmenu('volunteerSubmenu')" class="flex items-center justify-between w-full text-gray-600 hover:text-gray-900">
+                        Volunteer
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <ul id="volunteerSubmenu" class="hidden pl-4 mt-2 space-y-2">
+                        <li><a href="#" class="block text-gray-600 hover:text-gray-900">Gofundme campaign teachers</a></li>
+                        <li><a href="#" class="block text-gray-600 hover:text-gray-900">Gofundme campaign students</a></li>
+                    </ul>
+                </li>
+                    <li><a href="https://yoga-admin-console.righttasker.com.au/auth/login" class="block text-gray-600 hover:text-gray-900">Log in</a></li>
+                    <li><a href="https://yoga-admin-console.righttasker.com.au/auth/login" class="block bg-[#ff933b] text-black px-4 py-2 rounded-full hover:bg-[#d66b13] transition-colors text-center">Sign up</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 max-w-6xl">
+        <!-- Hero Section -->
+        <section class="text-center mb-16">
+            <div class="mb-8">
+                <img src="teachers.png" alt="Agastya Group Photo" class="w-full max-w-4xl mx-auto rounded-lg">
+            </div>
+
+            <div class="mb-12 px-4">
+                <p class="text-gray-600 uppercase tracking-wider text-sm mb-4">GOFUNDME TEACHERS CAMPAIGN</p>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Spread the value of well-being through yoga with us!</h1>
+                <p class="text-gray-600 max-w-2xl mx-auto mb-8">
+                    f you are a teacher and wish to start or expand your audience and spread the joy of yoga, then we have something very exciting for you. Join us in our endeavour to organise and execute Isha yoga practices accross places in and your own.
+                </p>
+                <button class="bg-[#ff933b] font-semibold text-black px-6 md:px-8 py-3 rounded-full hover:bg-[#d66b13] transition-colors">
+                    Get in touch
+                </button>
+            </div>
+        </section>
+
+        <!-- Features Grid -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-16 px-4">
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+                <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-4">Initiative</h2>
+                <p class="text-gray-600">
+                    We are trying to partner with Isha Yoga teachers and volunteers to organise and execute Isha yoga classes in yoga studios and other places. We offer to sponsor the programs costs.
+                </p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+                <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-4">Our Ask</h2>
+                <p class="text-gray-600">
+                    We want teachers and volunteers just like you, to help us execute this initiative. So, if you are willing, please reach out to us by filling out the form below.
+                </p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+                <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-4">Support</h2>
+                <p class="text-gray-600">
+                    We appreciate your support for this initiative. If you wish to add to this cause, then please donate whatever you can to bear the costs incurred in organising this initiative.
+                </p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+                <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-4">Spread the word</h2>
+                <p class="text-gray-600 mb-4">
+                    If you see the value in this initiative for yourself, then we fully encourage you to spread the word about this cause and bring in more teachers, volunteers and students just like yourself, so we may continue to organise these programs in the future.
+                </p>
+                <p class="text-gray-600 mb-4">
+                    See our recommendations from fellow Isha Hatha Yoga teachers.
+                </p>
+                <button class="bg-[#ff933b] font-semibold text-black px-6 py-2 rounded-full hover:bg-[#d66b13] transition-colors">
+                    See Reviews
+                </button>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section class="max-w-4xl mx-auto bg-orange-50 rounded-lg overflow-hidden">
+            <div class="bg-orange-400 py-6 px-8">
+                <h2 class="text-xl md:text-2xl font-bold text-black">Enter your details</h2>
+            </div>
+            
+            <form id="partnerForm" class="p-4 md:p-8 space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                    <div class="space-y-2">
+                        <label for="fullName" class="block text-base md:text-lg font-semibold text-gray-900">Full name</label>
+                        <input type="text" id="fullName" name="fullName" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 focus:border-orange-400 outline-none" required>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label for="email" class="block text-base md:text-lg font-semibold text-gray-900">Email</label>
+                        <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 focus:border-orange-400 outline-none" required>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label for="businessName" class="block text-base md:text-lg font-semibold text-gray-900">Business name</label>
+                        <input type="text" id="businessName" name="businessName" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 focus:border-orange-400 outline-none" required>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label for="phone" class="block text-base md:text-lg font-semibold text-gray-900">Phone number / What's app</label>
+                        <input type="tel" id="phone" name="phone" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 focus:border-orange-400 outline-none" required>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label for="websiteUrl" class="block text-base md:text-lg font-semibold text-gray-900">Website URL</label>
+                        <input type="url" id="websiteUrl" name="websiteUrl" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 focus:border-orange-400 outline-none">
+                    </div>
+
+                    <div class="space-y-2">
+                        <label for="country" class="block text-base md:text-lg font-semibold text-gray-900">Country</label>
+                        <input type="text" id="country" name="country" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 focus:border-orange-400 outline-none" required>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <label for="studioDetails" class="block text-base md:text-lg font-semibold text-gray-900">Studio details</label>
+                    <textarea id="studioDetails" name="studioDetails" rows="5" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 focus:border-orange-400 outline-none" required></textarea>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="w-full max-w-md bg-orange-400 text-black py-3 md:py-4 px-6 md:px-8 rounded-full text-base md:text-lg font-semibold hover:bg-orange-500 transition-colors">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer class="bg-gray-900 text-white py-20 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8">
+                <!-- Logo and Description -->
+                <div class="lg:col-span-4">
+                    <div class="mb-6">
+                        <img src="yogiclogo-footer.png" alt="Logo" class="w-3/5 h-auto">
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed max-w-md mb-8">
+                        A complete operating system for health & wellness studios and gyms in AU, NZ, UK & USA.
+                    </p>
+                </div>
+
+                <!-- Company Links -->
+                <div class="lg:col-span-2 md:col-span-1">
+                    <h4 class="text-green-500 text-base font-semibold mb-4">
+                        Company
+                    </h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition-colors">About us</a></li>
+                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition-colors">Terms & conditions</a></li>
+                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition-colors">Privacy policy</a></li>
+                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition-colors">User accounts</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support Links -->
+                <div class="lg:col-span-2 md:col-span-1">
+                    <h4 class="text-green-500 text-base font-semibold mb-4">
+                        Support
+                    </h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition-colors">Knowledge base</a></li>
+                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition-colors">Contact us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Partners Links -->
+                <div class="lg:col-span-2 md:col-span-1">
+                    <h4 class="text-green-500 text-base font-semibold mb-4">
+                        Partners
+                    </h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition-colors">Our partners</a></li>
+                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition-colors">Media pack</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="mt-16 pt-8 border-t border-gray-800">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <div class="text-gray-400 text-sm">
+                        Copyright © 2024 YogicFuture
+                    </div>
+                    <div class="flex space-x-6">
+                        <a href="#" aria-label="LinkedIn" class="text-white hover:text-gray-400 transition-colors">
+                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Facebook" class="text-white hover:text-gray-400 transition-colors">
+                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.04c-5.5 0-10 4.49-10 10.02c0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89c1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7C18.34 21.21 22 17.06 22 12.06c0-5.53-4.5-10.02-10-10.02z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram" class="text-white hover:text-gray-400 transition-colors">
+                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2a10 10 0 0 0-10 10a10 10 0 0 0 10 10a10 10 0 0 0 10-10a10 10 0 0 0-10-10m0 2c4.41 0 8 3.59 8 8s-3.59 8-8 8s-8-3.59-8-8s3.59-8 8-8m0 14c-3.31 0-6-2.69-6-6s2.69-6 6-6s6 2.69 6 6s-2.69 6-6 6m0-10a4 4 0 0 0-4 4a4 4 0 0 0 4 4a4 4 0 0 0 4-4a4 4 0 0 0-4-4m0 6a2 2 0 0 1-2-2a2 2 0 0 1 2-2a2 2 0 0 1 2 2a2 2 0 0 1-2 2"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter" class="text-white hover:text-gray-400 transition-colors">
+                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69c.88-.53 1.56-1.37 1.88-2.38c-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29c0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15c0 1.49.75 2.81 1.91 3.56c-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07a4.28 4.28 0 0 0 4 2.98a8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56c.84-.6 1.56-1.36 2.14-2.23z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+     <script src="teachers.js"></script>
+    </body>
+    </html>
